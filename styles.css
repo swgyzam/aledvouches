@@ -1,51 +1,11 @@
-/* --------- Layout basics --------- */
 body {
-  font-family: system-ui, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f5f5f5;
-  color: #222;
-}
-
-header, footer {
-  text-align: center;
-  padding: 1.5rem 1rem;
-  background: #222;
-  color: #fff;
-}
-
-main {
-  padding: 2rem 1rem;
-}
-
-/* --------- Vouch cards --------- */
-.vouches {
-  display: grid;
-  gap: 1.25rem;
-  /* Responsive 1‑, 2‑, or 3‑column grid */
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  background-color: #f8f9fa;
 }
 
 .vouch-card {
-  display: block;               /* Make anchor fill the card */
-  padding: 1rem 1.25rem;
-  background: #fff;
-  border-radius: 0.75rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  text-decoration: none;        /* Remove default link underline */
-  color: inherit;               /* Keep normal text color */
-  transition: transform .15s ease, box-shadow .15s ease;
+  transition: transform 0.3s ease;
 }
 
-.vouch-card:hover,
-.vouch-card:focus-visible {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
-}
-
-/* Optional: nicer heading spacing inside cards */
-.vouch-card h2 {
-  margin-top: 0;
-  margin-bottom: .5rem;
-  font-size: 1.1rem;
+.vouch-card:hover {
+  transform: scale(1.02);
 }

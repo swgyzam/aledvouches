@@ -2,48 +2,71 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>AledCheapStore</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aled Vouches | Proof of Transaction</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <header>
-    <h1>Aled Voucher</h1>
-    <p>Proof of completed transactions</p>
-  </header>
+  <!-- Header -->
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+      <span class="navbar-brand mb-0 h1">Aled Vouches</span>
+    </div>
+  </nav>
 
-  <main>
-    <section class="vouches">
+  <!-- Hero Section -->
+  <section class="py-5 text-center">
+    <div class="container">
+      <h1 class="display-5 fw-bold">Proof of Legit Transactions</h1>
+      <p class="lead text-muted">This page shows real customer feedback and transaction receipts to prove my legitimacy.</p>
+    </div>
+  </section>
 
-      <!-- Each card is now an <a> linking to its own URL -->
-      <a href="https://www.facebook.com/61578868610510/posts/pfbid0HF76GFHHAAd2NzAyGg6gu1oJgfWVkG1icwEf945W4rPW75XkztV71wRyhViixCnVl/?app=fbl" class="vouch-card">
-        <h2>Transaction #1</h2>
-        <p><strong>Name:</strong> Alice</p>
-        <p><strong>Date:</strong> 2025‑07‑25</p>
-        <p><strong>Details:</strong> Sent $100 for freelance work.</p>
-      </a>
+  <!-- Vouches Section -->
+  <div class="container pb-5">
+    <div class="row g-4">
+      
+      <!-- Vouch Card Example 1 -->
+      <div class="col-md-4">
+        <div class="card vouch-card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">John Doe</h5>
+            <p class="card-text">"Bought from Aled, fast and smooth transaction! Highly trusted seller."</p>
+            <small class="text-muted">July 29, 2025</small>
+          </div>
+        </div>
+      </div>
 
-      <a href="https://example.com/tx/2" class="vouch-card">
-        <h2>Transaction #2</h2>
-        <p><strong>Name:</strong> Bob</p>
-        <p><strong>Date:</strong> 2025‑07‑28</p>
-        <p><strong>Details:</strong> Bought game item, paid via PayPal.</p>
-      </a>
+      <!-- Vouch Card Example 2 -->
+      <div class="col-md-4">
+        <div class="card vouch-card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Jane Smith</h5>
+            <p class="card-text">"Second time buying — still legit and fast response!"</p>
+            <small class="text-muted">July 26, 2025</small>
+          </div>
+        </div>
+      </div>
 
-      <a href="https://example.com/tx/3" class="vouch-card">
-        <h2>Transaction #3</h2>
-        <p><strong>Name:</strong> Cara</p>
-        <p><strong>Date:</strong> 2025‑07‑29</p>
-        <p><strong>Details:</strong> Commission payment received.</p>
-      </a>
+      <!-- Vouch Card Example 3 -->
+      <div class="col-md-4">
+        <div class="card vouch-card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Mike Gamer</h5>
+            <p class="card-text">"Legit and helpful, 100% recommend Aled!"</p>
+            <small class="text-muted">July 20, 2025</small>
+          </div>
+        </div>
+      </div>
 
-      <!-- Add more vouch cards as needed -->
-    </section>
-  </main>
+    </div>
+  </div>
 
-  <footer>
-    <p>aledvouchesproofoftransaction</p>
-  </footer>
+  <!-- Bootstrap JS (Optional if no JS needed) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
