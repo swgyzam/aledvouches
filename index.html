@@ -7,28 +7,41 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
   <header>
     <h1>Aled Voucher</h1>
     <p>Proof of completed transactions</p>
   </header>
+
   <main>
     <section class="vouches">
-      <!-- Example vouch cards; replace with your own data -->
-      <div class="vouch-card">
-        <h2>Transaction #1</h2>
-        <p><strong>Name:</strong> Alice</p>
-        <p><strong>Date:</strong> 2025-07-25</p>
-        <p><strong>Details:</strong> Sent $100 for freelance work.</p>
-      </div>
-      <div class="vouch-card">
-        <h2>Transaction #2</h2>
-        <p><strong>Name:</strong> Bob</p>
-        <p><strong>Date:</strong> 2025-07-28</p>
-        <p><strong>Details:</strong> Bought game item, paid via PayPal.</p>
-      </div>
-      <!-- Add more vouch cards below as needed -->
+
+      <!-- Each card is now an <a> linking to its own URL -->
+      <a href="https://example.com/tx/1" class="vouch-card">
+        <h2>Transaction #1</h2>
+        <p><strong>Name:</strong> Alice</p>
+        <p><strong>Date:</strong> 2025‑07‑25</p>
+        <p><strong>Details:</strong> Sent $100 for freelance work.</p>
+      </a>
+
+      <a href="https://example.com/tx/2" class="vouch-card">
+        <h2>Transaction #2</h2>
+        <p><strong>Name:</strong> Bob</p>
+        <p><strong>Date:</strong> 2025‑07‑28</p>
+        <p><strong>Details:</strong> Bought game item, paid via PayPal.</p>
+      </a>
+
+      <a href="https://example.com/tx/3" class="vouch-card">
+        <h2>Transaction #3</h2>
+        <p><strong>Name:</strong> Cara</p>
+        <p><strong>Date:</strong> 2025‑07‑29</p>
+        <p><strong>Details:</strong> Commission payment received.</p>
+      </a>
+
+      <!-- Add more vouch cards as needed -->
     </section>
   </main>
+
   <footer>
     <p>&copy; aledvouchesproofoftransaction</p>
   </footer>
