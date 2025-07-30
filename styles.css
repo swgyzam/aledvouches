@@ -3,9 +3,18 @@ body {
 }
 
 .vouch-card {
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .vouch-card:hover {
   transform: scale(1.02);
+  box-shadow: 0 0 15px rgba(0, 128, 0, 0.3);
+}
+
+.card-header {
+  font-size: 1rem;
+}
+
+.card-body p {
+  font-size: 0.95rem;
 }
