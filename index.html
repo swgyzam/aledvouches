@@ -1,65 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Aled Vouches | Proof of Transaction</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-  <style>
-    .vouch-card {
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .vouch-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
-    }
-    .card-header {
-      font-size: 1rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aled Vouches</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<!-- Hero Section -->
-<section class="py-5 text-center bg-black text-white">
-  <div class="container">
-    <div class="d-flex flex-column align-items-center mb-3">
-      <img src="images/logo.png" alt="Logo" width="350" height="350" class="mb-1"> <!-- Reduced margin -->
-    </div>
-    <h1 style="position: absolute; top: 385px; left: 15%;">ALED CHEAP STORE</h1> <!-- Reduced margin -->
-    <h6 style="font-size: 10px; justify-content: center;">These vouches are real proof of completed transactions from satisfied buyers. Each one shows the actual payment and product delivered, giving you confidence that we’re trustworthy and legit. We’re proud to let our work and happy clients speak for themselves. </h6>
-  </div>
-</section>
-
-
-<!-- Vouch Cards -->
-<div class="container py-5">
-  <div class="row g-4">
-
-    <!-- Example Card -->
-    <div class="col-md-4">
-      <a href="https://www.facebook.com/61578868610510/posts/122093691998962287/?mibextid=rS40aB7S9Ucbxw6v" class="text-decoration-none text-dark">
-        <div class="card vouch-card h-100 shadow-sm">
-          <div class="card-header bg-success text-white fw-semibold">
-            #1 SUCCESSFUL TRANSACTION
-          </div>
-          <img src="images/1.jpg" class="card-img-top" alt="Transaction Proof">
-          <div class="card-body small">
-            <p class="mb-1"><strong>Item Sold:</strong> Discord Server Logo</p>
-            <p class="mb-1"><strong>Logo & Price:</strong> ₱250</p>
-            <p class="mb-1"><strong>Buyer Name:</strong> John Doe</p>
-            <p class="mb-1"><strong>Date:</strong> July 28, 2025</p>
-            <p class="mb-0"><strong>Time:</strong> 3:15 PM</p>
-          </div>
+    <!-- Main Vouches Page -->
+    <div id="vouchesPage" class="container-fluid py-4">
+        <!-- Header -->
+        <div class="text-center mb-5">
+            <h1 class="display-4 fw-bold mb-3 fade-in">Aled Vouches</h1>
+            <p class="lead text-muted fade-in">Trusted transactions and verified deals</p>
         </div>
-      </a>
+        
+        <!-- Search and Filter -->
+        <div class="row justify-content-center mb-4">
+            <div class="col-12 col-md-8 col-lg-6">
+                <div class="input-group">
+                    <input type="text" id="searchInput" class="form-control" 
+                           placeholder="Search vouches...">
+                    <button class="btn btn-outline-secondary" type="button">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Vouches Grid -->
+        <div id="vouchesGrid" class="row g-4">
+            <!-- Vouch cards will be populated by JavaScript -->
+        </div>
     </div>
-
-    <!-- More cards... -->
-
-  </div>
-</div>
-
+    
+    <!-- Detail Page -->
+    <div id="detailPage" class="container-fluid py-4 d-none">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-8">
+                <div class="detail-view rounded-4 p-4 shadow-lg">
+                    <!-- Back Button -->
+                    <button id="backButton" class="btn btn-outline-primary mb-4">
+                        <i class="bi bi-arrow-left me-2"></i>Back to Vouches
+                    </button>
+                    
+                    <!-- Detail Content -->
+                    <div id="detailContent">
+                        <!-- Content will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Media Modal -->
+    <div class="modal fade" id="mediaModal" tabindex="-1">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content bg-dark">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title text-white">Media Preview</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <div id="mediaContent" class="text-center">
+                        <!-- Media content will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
 </body>
 </html>
