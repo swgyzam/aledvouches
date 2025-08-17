@@ -1,0 +1,18 @@
+[
+  {
+    "src": "/img/transactions/1.png",
+    "alt": "Transaction 1"
+  },
+  {
+    "src": "/img/transactions/2.png",
+    "alt": "Transaction 2"
+  },
+  {
+    "src": "https://via.placeholder.com/400x250/999999",
+    "alt": "Transaction 3"
+  },
+  {
+    "src": "https://via.placeholder.com/400x250/555555",
+    "alt": "Transaction 4"
+  }
+]

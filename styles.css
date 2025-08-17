@@ -1,48 +1,27 @@
 body {
-    background-color: #f8f9fa; /* Light gray background */
-    min-height: 100vh;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #212529; /* Dark text color */
+  font-family: 'Arial', sans-serif;
 }
 
-.vouch-card {
-    transition: all 0.3s ease;
-    background: #ffffff; /* White background for cards */
-    border: 1px solid #dee2e6; /* Light gray border */
+.navbar-brand {
+  color: #333;
 }
 
-.vouch-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+.gallery-img {
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
-.detail-view {
-    background: #ffffff; /* White background for detail view */
+.gallery-img:hover {
+  transform: scale(1.03);
 }
 
-.media-thumbnail {
-    transition: all 0.3s ease;
+/* Zoom effect sa modal image */
+.zoomable {
+  transition: transform 0.3s ease;
+  cursor: zoom-in;
 }
 
-.media-thumbnail:hover {
-    transform: scale(1.05);
-    cursor: pointer;
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.status-badge {
-    font-size: 0.75rem;
-    padding: 0.25rem 0.75rem;
-}
-
-.amount-text {
-    font-weight: 700;
+.zoomable:active {
+  transform: scale(1.5);
+  cursor: zoom-out;
 }

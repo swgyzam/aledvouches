@@ -1,86 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aled Vouches</title>
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aled Cheap Store Vouches</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <!-- Main Vouches Page -->
-    <div id="vouchesPage" class="container-fluid py-4">
-        <!-- Header -->
-        <div class="text-center mb-5">
-            <h1 class="display-4 fw-bold mb-3 fade-in">Aled Vouches</h1>
-            <p class="lead text-muted fade-in">Trusted transactions and verified deals</p>
-        </div>
-        
-        <!-- Search and Filter -->
-        <div class="row justify-content-center mb-4">
-            <div class="col-12 col-md-8 col-lg-6">
-                <div class="input-group">
-                    <input type="text" id="searchInput" class="form-control" 
-                           placeholder="Search vouches...">
-                    <button class="btn btn-outline-secondary" type="button">
-                        <i class="bi bi-search"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Vouches Grid -->
-        <div id="vouchesGrid" class="row g-4">
-            <!-- Vouch cards will be populated by JavaScript -->
-        </div>
+<body class="bg-light">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-light bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-4" href="#">Aled Cheap Store Vouches</a>
     </div>
-    
-    <!-- Detail Page -->
-    <div id="detailPage" class="container-fluid py-4 d-none">
-        <div class="row justify-content-center">
-            <div class="col-12 col-lg-8">
-                <div class="detail-view rounded-4 p-4 shadow-lg">
-                    <!-- Back Button -->
-                    <button id="backButton" class="btn btn-outline-primary mb-4">
-                        <i class="bi bi-arrow-left me-2"></i>Back to Vouches
-                    </button>
-                    
-                    <!-- Detail Content -->
-                    <div id="detailContent">
-                        <!-- Content will be populated by JavaScript -->
-                    </div>
-                </div>
-            </div>
-        </div>
+  </nav>
+
+  <!-- Gallery -->
+  <section class="container py-5">
+    <div class="row g-4" id="galleryContainer">
+      <!-- Images will load here from JSON -->
     </div>
-    
-    <!-- Media Modal -->
-    <div class="modal fade" id="mediaModal" tabindex="-1">
-        <div class="modal-dialog modal-xl modal-dialog-centered">
-            <div class="modal-content bg-dark">
-                <div class="modal-header border-0">
-                    <h5 class="modal-title text-white">Media Preview</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body p-0">
-                    <div id="mediaContent" class="text-center">
-                        <!-- Media content will be populated by JavaScript -->
-                    </div>
-                </div>
-            </div>
+  </section>
+
+  <!-- Image Modal -->
+  <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content bg-transparent border-0">
+        <div class="modal-body text-center">
+          <img id="modalImage" src="" class="img-fluid rounded zoomable" alt="Zoom Image">
         </div>
+      </div>
     </div>
-    
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
-    <script src="script.js"></script>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Load Gallery from JSON -->
+  <script>
+    const galleryContainer = document.getElementById('galleryContainer');
+    const modalImage = document.getElementById('modalImage');
+
+    // Load JSON data
+    fetch('data.json')
+      .then(response => response.json())
+      .then(data => {
+        data.forEach(item => {
+          // Create column
+          const col = document.createElement('div');
+          col.className = "col-md-4 col-sm-6";
+
+          // Create card
+          col.innerHTML = `
+            <div class="card shadow-sm border-0">
+              <img src="${item.src}" alt="${item.alt}" 
+                class="card-img-top img-thumbnail gallery-img" 
+                data-bs-toggle="modal" data-bs-target="#imageModal">
+            </div>
+          `;
+          galleryContainer.appendChild(col);
+        });
+
+        // Event listener for modal
+        document.querySelectorAll('.gallery-img').forEach(img => {
+          img.addEventListener('click', () => {
+            modalImage.src = img.src;
+          });
+        });
+      })
+      .catch(error => console.error('Error loading JSON:', error));
+  </script>
 </body>
 </html>
