@@ -57,7 +57,7 @@
             <div class="card shadow-sm border-0">
               <img src="${item.src}" alt="${item.alt}" 
                 class="card-img-top img-thumbnail gallery-img" 
-                data-bs-toggle="modal" data-bs-target="#imageModal">
+                data-bs-toggle="modal" data-bs-target="#imageModal" draggable="false">
             </div>
           `;
           galleryContainer.appendChild(col);
@@ -71,6 +71,40 @@
         });
       })
       .catch(error => console.error('Error loading JSON:', error));
+
+    /* =======================
+       Security / Anti-Save Functions
+    ======================== */
+
+    // Disable right-click
+    document.addEventListener('contextmenu', e => e.preventDefault());
+
+    // Disable drag of images
+    document.addEventListener('dragstart', e => e.preventDefault());
+
+    // Disable common key shortcuts
+    document.addEventListener('keydown', e => {
+      if (
+        e.key === "PrintScreen" || // PrintScreen
+        (e.ctrlKey && e.key.toLowerCase() === "s") || // Ctrl+S
+        (e.ctrlKey && e.key.toLowerCase() === "u") || // Ctrl+U
+        (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "i") || // Ctrl+Shift+I
+        (e.ctrlKey && e.key.toLowerCase() === "p") // Ctrl+P
+      ) {
+        e.preventDefault();
+        alert("This action is disabled on this website.");
+        return false;
+      }
+    });
+
+    // Try to block PrintScreen by clearing clipboard
+    document.addEventListener("keyup", e => {
+      if (e.key === "PrintScreen") {
+        navigator.clipboard.writeText("Screenshots are disabled!").then(() => {
+          alert("Screenshots are not allowed on this website.");
+        });
+      }
+    });
   </script>
 </body>
 </html>
